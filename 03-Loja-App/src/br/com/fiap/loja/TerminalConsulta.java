@@ -19,7 +19,7 @@ public class TerminalConsulta {
 		int codigo = 0;
 		String nome = PropertySingleton.getInstance().getProperty("nome");
 		LocalDate hoje = LocalDate.now();
-		DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		DateTimeFormatter formatador = DateTimeFormatter.ofPattern(PropertySingleton.getInstance().getProperty("mascaraData"));
 		hoje.format(formatador);
 		System.out.println(nome + " " + hoje.format(formatador));
 		System.out.println("Digite o código do produto: ");
