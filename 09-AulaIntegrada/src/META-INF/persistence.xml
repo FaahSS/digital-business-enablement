@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="09-AulaIntegrada">
+	<class>br.com.fiap.resource.AulaTO</class>
+	<properties>
+		<property name="hibernate.show_sql" value="true" />
+		<property name="hibernate.hbm2ddl.auto" value="update" />
+		<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect" />
+		<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+		<property name="javax.persistence.jdbc.user" value="SYSTEM" />
+		<property name="javax.persistence.jdbc.password" value="46825000" />
+		<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+	</properties>
+</persistence-unit>
+</persistence>
