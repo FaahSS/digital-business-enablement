@@ -31,7 +31,7 @@ public class CarrinhoBean {
 		List<Produto> produtos = new ArrayList<Produto>();
 		produtos.add(new Produto(1, "Notebook Sony"));
 		produtos.add(new Produto(2, "Tablet Samsung"));
-		produtos.add(new Produto(1, "Smartwatch Apple"));
+		produtos.add(new Produto(3, "Smartwatch Apple"));
 		return produtos;
 	}
 

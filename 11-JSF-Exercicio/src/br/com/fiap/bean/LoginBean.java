@@ -8,12 +8,14 @@ public class LoginBean {
 	private String senha;
 	private boolean termo;
 	
-	public void logar() {
+	public String logar() {
 		if("faahss".equalsIgnoreCase(getLogin()) && "123".equals(getSenha())) {
 			System.out.println("Usuario logado: " + getLogin());
 			System.out.println("Manter Conectado: " + termo);
+			return "carrinho";
 		}else {
 			System.out.println("Usuario não autorizado");
+			return "login";
 		}
 	}
 	

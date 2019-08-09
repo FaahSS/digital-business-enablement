@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="_template.xhtml">
+	<ui:define name="titulo">Cadastro de Animais</ui:define>
+	<ui:define name="corpo">
+		<h:form>
+			<h:outputLabel value="Raça(*)" for="raca" />
+			<br />
+			<h:inputText value="#{cadastroBean.raca}" id="raca" required="true" requiredMessage="Campo obrigatório">
+				<f:validateLength minimum="3" maximum="30" />
+			</h:inputText>
+			<h:message for="raca"/>
+			<br />
+			<h:outputLabel value="Nome(*)" for="name" />
+			<br />
+			<h:inputText value="#{cadastroBean.nome}" id="name" required="true" requiredMessage="Campo obrigatório">
+				<f:validateLength minimum="3" maximum="30" />
+			</h:inputText>
+			<h:message for="name"/>
+			<br />
+			<h:outputLabel value="Gênero(*)" for="gender" />
+			<br />
+			<h:selectOneRadio value="#{cadastroBean.genero}" required="true"
+				id="gender">
+				<f:selectItem itemLabel="Macho" itemValue="Macho" />
+				<f:selectItem itemLabel="Fêmea" itemValue="Fêmea" />
+			</h:selectOneRadio>
+			<br />
+			<h:outputLabel value="Idade" for="age" />
+			<br />
+			<h:inputText value="#{cadastroBean.idade}" id="age">
+				<f:validateLongRange minimum="0" maximum="200" />
+			</h:inputText>
+			<br />
+			<h:outputLabel value="Peso(*)" for="weight" />
+			<br />
+			<h:inputText value="#{cadastroBean.peso}" id="weight" required="true" requiredMessage="Campo PESO obrigatório">
+				<f:validateDoubleRange minimum="0.00" />
+			</h:inputText>
+			<h:message for="weight"/>
+			<br />
+			<h:outputLabel value="Porte(*)" for="porte" />
+			<br />
+			<h:selectOneMenu value="#{cadastroBean.porte}" required="true">
+				<f:selectItem itemLabel="P" itemValue="P" />
+				<f:selectItem itemLabel="M" itemValue="M" />
+				<f:selectItem itemLabel="G" itemValue="G" />
+				<f:selectItem itemLabel="XG" itemValue="XG" />
+			</h:selectOneMenu>
+			<br />
+			<h:outputLabel value="RG Dono" for="rg" />
+			<br />
+			<h:inputText value="#{cadastroBean.rg}" id="rg">
+				<f:validateLength minimum="9" maximum="9" />
+				<f:validateRegex pattern="[0-9].*[x]" />
+			</h:inputText>
+			<br />
+			<h:commandButton action="#{cadastroBean.cadastrar}" value="OK" />
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
